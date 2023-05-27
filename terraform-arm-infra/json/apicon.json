@@ -1,0 +1,47 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_slack_name": {
+            "defaultValue": "slack",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('connections_slack_name')]",
+            "location": "eastus",
+            "kind": "V1",
+            "properties": {
+                "displayName": "Slack",
+                "statuses": [
+                    {
+                        "status": "Connected"
+                    }
+                ],
+                "customParameterValues": {},
+                "nonSecretParameterValues": {},
+                "createdTime": "2023-05-21T13:23:45.4453304Z",
+                "changedTime": "2023-05-21T13:24:46.0373218Z",
+                "api": {
+                    "name": "[parameters('connections_slack_name')]",
+                    "displayName": "Slack",
+                    "description": "Slack is a team communication tool, that brings together all of your team communications in one place, instantly searchable and available wherever you go.",
+                    "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1582/1.0.1582.2855/', parameters('connections_slack_name'), '/icon.png')]",
+                    "brandColor": "#78D4B6",
+                    "id": "[concat('/subscriptions/e80894db-d145-4782-b61e-bcda896501f8/providers/Microsoft.Web/locations/eastus/managedApis/', parameters('connections_slack_name'))]",
+                    "type": "Microsoft.Web/locations/managedApis"
+                },
+                "testLinks": [
+                    {
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/e80894db-d145-4782-b61e-bcda896501f8/resourceGroups/rgcrctopcug/providers/Microsoft.Web/connections/', parameters('connections_slack_name'), '/extensions/proxy/conversations.list?api-version=2016-06-01')]",
+                        "method": "get"
+                    }
+                ]
+            }
+        }
+    ]
+}
