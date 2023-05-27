@@ -5,7 +5,6 @@ terraform {
       version = "3.57.0"
     }
   }
-
   backend "azurerm" {
     resource_group_name  = "rgcrctopcug"
     storage_account_name = "stcrctopcug"
