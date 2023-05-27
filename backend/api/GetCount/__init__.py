@@ -30,6 +30,8 @@ class CosmosOperations(object):
                     print("Created table {}!".format(table_name))
                 except ResourceExistsError:
                     print("Table with name {} already exists. Skipping...".format(table_name))
+                    
+                    
                 
     def create_entity(self):        
         with TableClient.from_connection_string(self.connection_string, self.table_name, self.user_agent) as tc:            
