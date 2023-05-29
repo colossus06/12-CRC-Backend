@@ -69,13 +69,13 @@ jobs:
         package: ${{ github.workspace }}/${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
         scm-do-build-during-deployment: true
-        enable-oryx-build: true
-
-    
+        enable-oryx-build: true    
 
   deploy-to-prod:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == 'true'
+    needs: 
+      - deploy-to-staging
+    if: needs.deploy-to-staging.result == 'success' || github.event.pull_request.merged == 'true'
     environment:
       name: 'production'
       url: 'https://funcrctopcug.azurewebsites.net'
