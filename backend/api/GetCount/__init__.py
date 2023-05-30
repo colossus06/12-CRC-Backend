@@ -19,6 +19,8 @@ class CosmosOperations(object):
             "count": 0 
         }
 
+
+
         self.user_agent= "azsdk-python-data-tables/12.4.2 Python/3.9.16 (Linux-5.10.102.2-microsoft-standard-x86_64-with-glibc2.31)"
         self.my_filter = "PartitionKey eq 'cloud'"
         
