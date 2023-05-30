@@ -10,10 +10,8 @@ from azure.core.exceptions import ResourceExistsError
 
 
 
-class CosmosOperations(object):   
-                 
-    
-    
+class CosmosOperations(object):                  
+       
     
     def __init__(self):        
         self.connection_string = "DefaultEndpointsProtocol=https;AccountName=cosmoscrctopcug;AccountKey=1xDPWxRXxmu2HuajVUU66yZ7rsHkTAVzFNbHcmvuVCGmZ9yX1dlePtQ1WioZtVmSx8tPqDARvDWbACDb0JCOlQ==;TableEndpoint=https://cosmoscrctopcug.table.cosmos.azure.com:443/;"
