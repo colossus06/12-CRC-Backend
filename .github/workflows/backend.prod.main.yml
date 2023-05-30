@@ -37,7 +37,7 @@ jobs:
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
-        name: python-app
+        name: python-app-${{ github.sha }}
         path: ${{ github.workspace }}/${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
 
     - name: 'Run Azure Functions Action'
