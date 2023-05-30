@@ -3,7 +3,7 @@ name: Build
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened, closed]
+    types: [opened]
     branches: ["main"]
     paths:
       - 'backend/**'
@@ -50,7 +50,7 @@ jobs:
       url: 'https://funcstagerctopcug.azurewebsites.net'
     needs: 
       - build-backend
-    if: needs.build-backend.result == 'success' || github.event.pull_request.opened == true
+    if: needs.build-backend.result == 'success'
     steps:
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
