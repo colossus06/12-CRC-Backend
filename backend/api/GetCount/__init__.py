@@ -6,8 +6,8 @@ from azure.data.tables import UpdateMode
 import logging
 from azure.core.exceptions import HttpResponseError
 from azure.core.exceptions import ResourceExistsError
-
 class CosmosOperations(object):     
+          
           
           
     def __init__(self):        

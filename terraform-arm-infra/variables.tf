@@ -11,11 +11,6 @@ variable "rg" {
   default     = "rgcrctopcug"
 }
 
-variable "rgstage" {
-  description = "Azure resource group"
-  type        = string
-  default     = "stagingcrctopcug"
-}
 
 
 variable "rgtest" {
@@ -31,11 +26,6 @@ variable "st" {
   default     = "stcrctopcug"
 }
 
-variable "ststage" {
-  description = "Azure ststage"
-  type        = string
-  default     = "ststagecrctopcug"
-}
 
 
 variable "sttest" {
@@ -56,11 +46,6 @@ variable "func" {
   default     = "funcrctopcug"
 }
 
-variable "funcstage" {
-  description = "Azure funcstage"
-  type        = string
-  default     = "funcstagerctopcug"
-}
 
 variable "cosmos" {
   description = "Azure storageaccount"
@@ -68,28 +53,11 @@ variable "cosmos" {
   default     = "cosmoscrctopcug"
 }
 
-variable "cosmosstage" {
-  description = "Azure storageaccount"
-  type        = string
-  default     = "cosmostagecrctopcug"
-}
 
 variable "appi" {
   description = "Azure storageaccount"
   type        = string
   default     = "appicrctopcug"
-}
-
-variable "appistage" {
-  description = "Azure appistage"
-  type        = string
-  default     = "appistagecrctopcug"
-}
-
-variable "aspstage" {
-  description = "Azure asp"
-  type        = string
-  default     = "aspstagecrctopcug"
 }
 
 variable "logic" {
@@ -102,14 +70,11 @@ variable "ag" {
   type        = string
   default     = "failedreq"
 }
-
-
 variable "alert" {
   description = "Azure testlgappp"
   type        = string
   default     = "failed_requests_al"
 }
-
 variable "stc" {
   description = "Azure testlgappp"
   type        = string
