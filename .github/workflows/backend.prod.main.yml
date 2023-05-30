@@ -88,8 +88,13 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-            await github.rest.issues.createComment({
+            github.rest.issues.createComment({
+            issue_number: (await github.rest.repos.listPullRequestsAssociatedWithCommit({
+                commit_sha: context.sha,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'Thank you for the PR!'
-            });
+            })).data[0].number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '👋 Thanks for reporting!'
+            })
