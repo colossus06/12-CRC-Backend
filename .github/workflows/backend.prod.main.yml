@@ -63,7 +63,15 @@ jobs:
                 archive_format: 'zip',
             });
             let fs = require('fs');
-            fs.writeFileSync(`backend/api/python-app.zip`, Buffer.from(download.data));
+            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/python-app.zip`, Buffer.from(download.data));
+
+    - uses: actions/checkout@v1
+    - name: Setup and run tests
+      run: |
+       pwd
+       ls -la
+       whoami
+ 
 
 
     - name: 'Run Azure Functions Action'
@@ -71,7 +79,7 @@ jobs:
       id: fa
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: ${{ github.workspace }}/${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
+        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
         scm-do-build-during-deployment: true
         enable-oryx-build: true
