@@ -38,15 +38,11 @@ jobs:
       id: download-artifact
       uses: dawidd6/action-download-artifact@v2
       with:
-        # pr: ${{github.event.pull_request.number}}
+        workflow: backend.stage.main.yml
         if_no_artifact_found: fail
         name: python-app-${{ github.sha }}
         path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
-    # - name: Download artifact from build job
-    #   uses: actions/download-artifact@v2
-    #   with:
-    #     name: python-app-${{ github.sha }}
-    #     path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
+
 
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
