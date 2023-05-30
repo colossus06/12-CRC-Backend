@@ -89,7 +89,7 @@ jobs:
       with:
         script: |
             let fs = require('fs');
-            let issue_number = Number(fs.readFileSync('./python-app'));
+            let issue_number = Number(fs.readFileSync(`./${process.env.GITHUB_WORKSPACE}`));
             await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
