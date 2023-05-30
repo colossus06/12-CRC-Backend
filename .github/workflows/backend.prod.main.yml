@@ -38,9 +38,10 @@ jobs:
       id: download-artifact
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: backend.stage.main.yml
+        pr: ${{github.event.pull_request.number}}
+        # workflow: backend.stage.main.yml
         if_no_artifact_found: fail
-        name: python-app-${{ github.sha }}
+        # name: azurefunction-${{ github.sha }}
         path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
 
 

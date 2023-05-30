@@ -40,9 +40,9 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
-        name: python-app-${{ github.sha }}
+        name: azurefunction-${{ github.sha }}
         path: |
-          ${{ github.workspace }}/${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
+          ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
           !venv/
 
   deploy-to-staging:
@@ -59,7 +59,7 @@ jobs:
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
-        name: python-app-${{ github.sha }}
+        name: azurefunction-${{ github.sha }}
         path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
 
 
