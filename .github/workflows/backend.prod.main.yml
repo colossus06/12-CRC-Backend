@@ -42,8 +42,7 @@ jobs:
         workflow: backend.stage.main.yml
         if_no_artifact_found: fail
         path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
-
-
+        skip_unpack: true
 
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
