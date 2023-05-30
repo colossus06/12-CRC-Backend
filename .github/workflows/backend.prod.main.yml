@@ -63,7 +63,7 @@ jobs:
                 archive_format: 'zip',
             });
             let fs = require('fs');
-            fs.writeFileSync(`${env.AZURE_FUNCTIONAPP_PACKAGE_PATH}/api/python-app.zip`, Buffer.from(download.data));
+            fs.writeFileSync(`${AZURE_FUNCTIONAPP_PACKAGE_PATH}/api/python-app.zip`, Buffer.from(download.data));
 
 
     - name: 'Run Azure Functions Action'
