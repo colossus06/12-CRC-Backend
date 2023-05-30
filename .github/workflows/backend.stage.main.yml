@@ -40,10 +40,9 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
-        name: azurefunction-${{ github.sha }}
-        path: |
-          ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
-          !venv/
+        name: GetCount.zip
+        path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
+
 
   deploy-to-staging:
     runs-on: ubuntu-latest
@@ -57,7 +56,7 @@ jobs:
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
-        name: azurefunction-${{ github.sha }}
+        name: GetCount.zip
         path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
 
 
