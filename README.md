@@ -21,7 +21,13 @@ https://colossus06.github.io/crc-backend/
 ![image](https://github.com/colossus06/crc-backend/assets/96833570/54501a68-2acb-477c-92f9-b0401adfedec)
 
 
-# Cloud Resume Challenge on Azure
+## Summary
+
+Building my resume website from the ground up with using utilizing a wide variety of Microsoft Azure's Cloud services such as Azure CosmosDB Table API, Azure Functions, Azure SDK, Azure Blob Storage, Azure CDN, Azure DNS zones.
+
+Other tools used for automation and CI CD are Cypress, Github Actions, bicep and Terraform.
+
+## Cloud Resume Challenge on Azure
 
 Building my resume website from the ground up with using utilizing a wide variety of Microsoft Azure's Cloud services such as the following:
 
@@ -45,8 +51,4 @@ IaaC
 
 * Terraform to control the state of the resources.
 
-## Summary
 
-Building my resume website from the ground up with using utilizing a wide variety of Microsoft Azure's Cloud services such as Azure CosmosDB Table API, Azure Functions, Azure SDK, Azure Blob Storage, Azure CDN, Azure DNS zones.
-
-Other tools used for automation and CI CD are Cypress, Github Actions, bicep and Terraform.
