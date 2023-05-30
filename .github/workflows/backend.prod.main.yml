@@ -41,6 +41,7 @@ jobs:
         # pr: ${{github.event.pull_request.number}}
         workflow: backend.stage.main.yml
         if_no_artifact_found: fail
+        path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
 
 
 
@@ -49,7 +50,7 @@ jobs:
       id: fa
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: ./
+        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
         scm-do-build-during-deployment: true
         enable-oryx-build: true
