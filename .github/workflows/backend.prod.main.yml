@@ -38,6 +38,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: python-app-${{ github.sha }}
+        path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api
 
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
