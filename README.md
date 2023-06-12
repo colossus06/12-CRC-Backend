@@ -31,7 +31,8 @@ https://colossus06.github.io/crc-backend/
 
 
 
-https://github.com/colossus06/crc-backend/assets/96833570/6774bef5-c098-497c-8f66-bed6d61fb1d1
+
+[validation-2-crc.webm](https://github.com/colossus06/crc-backend/assets/96833570/3b5ceafc-3c92-447a-9aec-ad6790ef6027)
 
 
 
